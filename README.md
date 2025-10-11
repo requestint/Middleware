@@ -6,9 +6,8 @@ To deploy your project, you first need to create a repository on GitHub.
 
 1. Open GitHub and click the **“+”** icon in the top-right corner.  
 2. From the dropdown menu, select **“New repository.”**  
-3. You’ll be brought to a page like the one shown in the first image below.  
-4. Fill in your repository name and any other details you’d like.  
-5. Click **“Create repository.”**
+3. Fill in your repository name and any other details you’d like.  
+4. Click **“Create repository.”**
 
 Once created, your new GitHub repository is ready for you to upload or push your project files to.
   and run the nesscary commands below in powershell
@@ -81,4 +80,5 @@ If you want to run your project locally, follow these steps:
   this will run your project file's main script
   
 ---
+
 
