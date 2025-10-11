@@ -47,7 +47,7 @@ That’s your project’s live URL 🎉
 
 ---
 
-## 🧩 Step 3 — Run Your Project Locally (Using VS Code)
+## Step 3 — Run Your Project Locally (Using VS Code)
 
 If you want to run your project locally, follow these steps:
 
@@ -81,3 +81,4 @@ If you want to run your project locally, follow these steps:
   this will run your project file's main script
   
 ---
+
