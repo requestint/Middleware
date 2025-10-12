@@ -6,10 +6,10 @@ let commandQueue = [];
 
 
 app.post('/send-command', (req, res) => {
-  const { type, username, length } = req.body;
+  const { type, username, length, PlaceId } = req.body;
   
-  if (!type || !username) return res.status(400).send('Missing fields');
-  commandQueue.push({ type, username, length });
+  if (!type || !username || !PlaceId) return res.status(400).send('Missing fields');
+  commandQueue.push({ type, username, length, PlaceId });
 
   console.log(`Port ${3000} Remote Session Request : ` + JSON.stringify(req.body))
   res.sendStatus(200);
