@@ -1,30 +1,43 @@
-const express = require('express');
+import express from 'express';
+import settings from '../settings.js';
+import fetch from 'node-fetch';
+
 const app = express();
 app.use(express.json());
 
 let commandQueue = [];
 
-
 app.post('/send-command', (req, res) => {
-  const { type, username, length, PlaceId } = req.body;
-  
-  if (!type || !username || !PlaceId) return res.status(400).send('Missing fields');
-  commandQueue.push({ type, username, length, PlaceId });
+  const data = req.body; // no destructuring
 
-  console.log(`Port ${3000} Remote Session Request : ` + JSON.stringify(req.body))
+  console.log('📩 Incoming request:', data);
+
+  // Basic validation — ensure it's not empty
+  if (Object.keys(data).length === 0) {
+    return res.status(400).send('Missing fields');
+  }
+  
+  commandQueue.push(data);
+  console.log('✅ Added command to queue:', data);
+
   res.sendStatus(200);
 });
 
+
+
 app.get('/get-commands', (req, res) => {
 
-
-  console.log(`Port ${3000} Remote Session Request : ` + JSON.stringify(req.body))
-
+  // copy queue before clearing
   const commands = [...commandQueue];
+
+  console.log('📤 Sending queued commands:', commands);
+
+  // clear queue after sending
   commandQueue = [];
+
   res.json(commands);
 });
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Middleware server running on port ${PORT}`));
