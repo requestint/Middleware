@@ -1,12 +1,18 @@
+// Libraries
 import express from 'express';
-import settings from '../settings.js';
-import fetch from 'node-fetch';
 
+// Varibles
 const app = express();
+
+// INSTANT ACTIONS
 app.use(express.json());
 
+
+// Array's
 let commandQueue = [];
 
+
+// Functions
 app.post('/send-command', (req, res) => {
   const data = req.body; // no destructuring
 
