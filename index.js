@@ -38,11 +38,13 @@ app.get('/get-commands', (req, res) => {
 
   console.log('📤 Sending queued commands:', commands);
 
-  yield 3
   
   // clear queue after sending
+setTimeout(() => {
   commandQueue = [];
-
+  console.log('🧹 Command queue cleared');
+}, 3000);
+  
   res.json(commands);
 });
 
