@@ -40,12 +40,9 @@ app.get('/get-commands', (req, res) => {
 
   
   // clear queue after sending
-setTimeout(() => {
   commandQueue = [];
   console.log('🧹 Command queue cleared');
   res.json(commands);
-}, 3000);
-  
 });
 
 const PORT = process.env.PORT || 3000;
