@@ -43,9 +43,9 @@ app.get('/get-commands', (req, res) => {
 setTimeout(() => {
   commandQueue = [];
   console.log('🧹 Command queue cleared');
+  res.json(commands);
 }, 3000);
   
-  res.json(commands);
 });
 
 const PORT = process.env.PORT || 3000;
