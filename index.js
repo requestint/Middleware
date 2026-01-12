@@ -38,7 +38,7 @@ app.get('/get-commands', (req, res) => {
 
   console.log('📤 Sending queued commands:', commands);
 
-  await sleep(2000);
+  yield 3
   
   // clear queue after sending
   commandQueue = [];
