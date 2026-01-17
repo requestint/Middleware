@@ -40,8 +40,9 @@ app.get('/get-commands', (req, res) => {
 
   
   // // clear queue after sending
-  // commandQueue = [];
-  // console.log('🧹 Command queue cleared');
+  commandQueue = [];
+  console.log('🧹 Command queue cleared');
+  console.log(commands);
   res.json(commands);
 });
 
