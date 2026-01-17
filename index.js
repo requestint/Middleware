@@ -39,10 +39,10 @@ app.get('/get-commands', (req, res) => {
   console.log('📤 Sending queued commands:', commands);
 
   
-  // clear queue after sending
-  commandQueue = [];
-  console.log('🧹 Command queue cleared');
-  res.json(commands);
+  // // clear queue after sending
+  // commandQueue = [];
+  // console.log('🧹 Command queue cleared');
+  // res.json(commands);
 });
 
 const PORT = process.env.PORT || 3000;
