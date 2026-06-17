@@ -8,7 +8,7 @@ const app = express()
 app.use(express.json({ limit: '16kb' }))
 
 // ── Constants ────────────────────────────────────────
-const SECRET_KEY   = "b79dce58a883089df756276051007026380188665f145b526cb77b72d9475d2f"
+const SECRET_KEY   = process.env.SECRET_KEY
 const PORT         = process.env.PORT || 3000
 const POLL_TIMEOUT = 25000   // 25s max hold
 const CMD_TTL      = 60000   // commands expire after 60s
