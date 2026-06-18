@@ -27,7 +27,7 @@ app.use(rateLimit({
 
 // ── Auth ──────────────────────────────────────────────
 const auth = (req, res, next) => {
-    if (req.headers['x-api-key'] !== SECRET_KEY) {
+    if (req.headers['API-KEY'] !== SECRET_KEY) {
         return res.status(401).json({ error: 'Unauthorized' })
     }
     next()
