@@ -19,6 +19,7 @@ let commandQueue  = []   // pending commands waiting for Roblox
 let pollResolvers = []   // waiting long poll connections
 
 // ── Rate Limiting ─────────────────────────────────────
+app.set("trust proxy", 1)
 app.use(rateLimit({
     windowMs : 60 * 1000,
     max      : 600,
