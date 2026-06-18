@@ -28,12 +28,14 @@ app.use(rateLimit({
 
 // ── Auth ──────────────────────────────────────────────
 const auth = (req, res, next) => {
+    console.log('received key:', req.headers['api-key'])
+    console.log('expected key:', SECRET_KEY)
+    
     if (req.headers['api-key'] !== SECRET_KEY) {
         return res.status(401).json({ error: 'Unauthorized' })
     }
     next()
 }
-
 // ── Helpers ───────────────────────────────────────────
 
 // wake any long poll connections immediately when new data arrives
